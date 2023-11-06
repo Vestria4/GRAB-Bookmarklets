@@ -56,8 +56,8 @@
     <div class="container">
         <h1>GRAB Bookmarklets</h1>
         <p>Choose a bookmarklet below and add it to your bookmarks bar:</p>
-        <a href="javascript:(function(){let link=window.location.href;if(link.includes('grabvr.quest/levels/viewer/?level=')){let id=link.match(/level=([^&]+)/)[1];fetch(`https://api.slin.dev/grab/v1/details/${id.replace(':', '/')}`).then(response=>response.json()).then(details=>{let downloadLink=`https://api.slin.dev/grab/v1/download/${id.replace(':', '/')}/${details.iteration}`;let epochTime=Math.floor(Date.now()/1000);let fileName=`${epochTime}.level`;fetch(downloadLink).then(response=>response.blob()).then(blob=>{let url=window.URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download=fileName;document.body.appendChild(a);a.click();window.URL.revokeObjectURL(url);});}).catch(error=>console.error('Error:',error));}else{alert('Not a valid GRAB Level page!');}})();
-*/})();"
+        <a href="javascript:(function(){let link=window.location.href;if(link.includes('grabvr.quest/levels/viewer/?level=')){let id=link.match(/level=([^&]+)/)[1];fetch(`https://api.slin.dev/grab/v1/details/${id.replace(':', '/')}`).then(response=>response.json()).then(details=>{let downloadLink=`https://api.slin.dev/grab/v1/download/${id.replace(':', '/')}/${details.iteration}`;let epochTime=Math.floor(Date.now()/1000);let fileName=`${epochTime}.level`;fetch(downloadLink).then(response=>response.blob()).then(blob=>{let url=window.URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download=fileName;document.body.appendChild(a);a.click();window.URL.revokeObjectURL(url);});}).catch(error=>console.error('Error:',error));}else{alert('Not a valid GRAB Level page!');}})();">Download GRAB Level</a>
+
             class="bookmarklet-button">Bookmarklet 1</a>
         <a href="javascript:(function(){/* Your bookmarklet code goes here */})();"
             class="bookmarklet-button">Bookmarklet 2</a>
